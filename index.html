@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSG Entertainment — Fun Vending for Events & Parties</title>
+<meta name="description" content="HSG Entertainment delivers automatic popcorn and cotton candy vending machines for family entertainment centers, malls, arcades, parties, and events.">
+<style>
+:root{
+  --pink:#ff3d8b; --yellow:#ffd23f; --teal:#21d4d4; --purple:#8a4dff;
+  --coral:#ff6b4a; --cream:#fff7ed; --ink:#2b1a3a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins','Segoe UI',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;}
+h1,h2,h3{font-weight:800;line-height:1.15;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:linear-gradient(90deg,var(--pink),var(--purple));box-shadow:0 4px 18px rgba(138,77,255,.25);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1140px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.25rem;letter-spacing:.5px;}
+.brand .logo{width:40px;height:40px;border-radius:12px;background:var(--yellow);display:grid;place-items:center;font-size:1.3rem;}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{color:#fff;font-weight:600;font-size:.95rem;opacity:.95;}
+.nav-links a:hover{opacity:1;text-decoration:underline;}
+.btn{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:800;padding:12px 26px;border-radius:999px;box-shadow:0 6px 0 #e6b800;transition:transform .1s;}
+.btn:hover{transform:translateY(-2px);}
+.btn-light{background:#fff;box-shadow:0 6px 0 #d9cfc0;}
+/* HERO */
+.hero{position:relative;text-align:center;padding:80px 24px 90px;background:
+  radial-gradient(circle at 20% 20%,rgba(255,210,63,.35),transparent 40%),
+  radial-gradient(circle at 80% 10%,rgba(33,212,212,.35),transparent 40%),
+  radial-gradient(circle at 50% 90%,rgba(255,61,139,.3),transparent 45%),
+  linear-gradient(160deg,#fff7ed,#ffe6f2);}
+.hero .eyebrow{display:inline-block;background:#fff;color:var(--pink);font-weight:800;letter-spacing:2px;font-size:.8rem;padding:8px 18px;border-radius:999px;box-shadow:0 4px 14px rgba(255,61,139,.2);text-transform:uppercase;}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);margin:22px 0 16px;background:linear-gradient(90deg,var(--pink),var(--purple),var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p{font-size:1.2rem;max-width:680px;margin:0 auto 32px;color:#5a4a66;}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+/* SECTION */
+section{padding:70px 0;}
+.section-head{text-align:center;margin-bottom:48px;}
+.section-head .kicker{color:var(--teal);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:.85rem;}
+.section-head h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-top:8px;}
+.section-head p{color:#6b5b76;max-width:620px;margin:14px auto 0;}
+/* CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;}
+.card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 30px rgba(43,26,58,.10);border:3px solid #fff;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column;}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(138,77,255,.22);border-color:var(--yellow);}
+.card-img{background:linear-gradient(160deg,#fff,#ffeef6);padding:24px;display:grid;place-items:center;}
+.card-img img{max-height:240px;width:auto;max-width:100%;object-fit:contain;}
+.card-body{padding:24px 26px 8px;flex:1;}
+.tag{display:inline-block;background:var(--teal);color:#fff;font-weight:800;font-size:.7rem;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px;}
+.tag.pink{background:var(--pink);}
+.tag.purple{background:var(--purple);}
+.card h3{font-size:1.35rem;margin-bottom:10px;}
+.card p{color:#5f5168;font-size:.97rem;}
+.specs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;}
+.spec{background:#fdf0d5;color:#8a5a00;font-weight:700;font-size:.78rem;padding:6px 12px;border-radius:999px;}
+.card-foot{padding:18px 26px 26px;}
+.card-foot a{color:var(--pink);font-weight:800;}
+/* MARKETS strip */
+.markets{background:linear-gradient(90deg,var(--teal),var(--purple));color:#fff;}
+.markets .grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));}
+.market{background:rgba(255,255,255,.12);border-radius:20px;padding:26px;text-align:center;}
+.market .emo{font-size:2.4rem;}
+.market h3{margin:10px 0 6px;font-size:1.15rem;}
+.market p{font-size:.9rem;opacity:.92;}
+/* CTA */
+.cta{text-align:center;background:
+  radial-gradient(circle at 10% 20%,rgba(255,210,63,.4),transparent 40%),
+  radial-gradient(circle at 90% 80%,rgba(33,212,212,.4),transparent 40%),
+  linear-gradient(160deg,#ffe6f2,#fff7ed);}
+.cta h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:14px;}
+.cta p{color:#5a4a66;max-width:560px;margin:0 auto 28px;font-size:1.1rem;}
+/* FOOTER */
+footer{background:var(--ink);color:#e7dcf2;padding:54px 0 30px;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;}
+footer h4{color:#fff;margin-bottom:14px;font-size:1rem;letter-spacing:1px;text-transform:uppercase;}
+footer a,footer p{color:#c9b8de;font-size:.92rem;display:block;margin-bottom:8px;}
+footer a:hover{color:var(--yellow);}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:20px;text-align:center;font-size:.85rem;color:#a895c2;}
+@media(max-width:760px){.nav-links{display:none;}.foot-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top"><span class="logo">🎪</span> HSG Entertainment</a>
+    <nav class="nav-links">
+      <a href="#machines">Machines</a>
+      <a href="#markets">Where It Shines</a>
+      <a href="https://jhughes281.github.io/HSG-Lockers/">Commercial / Lockers ↗</a>
+      <a class="btn" href="mailto:jayhughes@hughesstrategic.net">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <span class="eyebrow">★ Sweet Fun, Fully Automatic ★</span>
+  <h1>Popcorn &amp; Cotton Candy<br>Vending — On Demand</h1>
+  <p>HSG Entertainment brings self-service treat machines to family entertainment centers, malls, arcades, parties, and events. Fresh popcorn and spun-to-order cotton candy, no attendant required.</p>
+  <div class="hero-cta">
+    <a class="btn" href="mailto:jayhughes@hughesstrategic.net">Get a Quote →</a>
+    <a class="btn btn-light" href="#machines">See the Machines</a>
+  </div>
+</section>
+
+<section id="machines">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Our Machines</div>
+      <h2>Crowd-Pleasers That Run Themselves</h2>
+      <p>Eye-catching, fully automatic, and built to delight guests of all ages — with touchscreen ordering and tap, card, coin, or cash payment.</p>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img"><img src="cotton-candy.png" alt="Automatic Cotton Candy Vending Machine"></div>
+        <div class="card-body">
+          <span class="tag pink">Guest Favorite</span>
+          <h3>Automatic Cotton Candy Machine</h3>
+          <p>A robotic arm grabs the stick and spins a perfect, fluffy cone — guests just pick a design on the touchscreen and watch the magic. Glowing LED lights and playful styling make it a showstopper.</p>
+          <div class="specs">
+            <span class="spec">Touchscreen</span>
+            <span class="spec">Robotic Arm</span>
+            <span class="spec">Card + Coin Pay</span>
+            <span class="spec">LED Light Show</span>
+            <span class="spec">Mobile / Casters</span>
+          </div>
+        </div>
+        <div class="card-foot"><a href="mailto:jayhughes@hughesstrategic.net">Request a Quote →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="popcorn-machine.png" alt="Automatic Popcorn Vending Machine"></div>
+        <div class="card-body">
+          <span class="tag">Most Popular</span>
+          <h3>Automatic Popcorn Machine</h3>
+          <p>Pops fresh, hot popcorn to order in seconds. A 10.1&Prime; touchscreen guides flavor selection and accepts coins, cash, card, and tap-to-pay — in a slim, custom-wrappable cabinet that doubles as an ad display.</p>
+          <div class="specs">
+            <span class="spec">60 Cups</span>
+            <span class="spec">4 Flavors</span>
+            <span class="spec">10.1&Prime; Touchscreen</span>
+            <span class="spec">Coin/Cash/Card/NFC</span>
+            <span class="spec">24/7</span>
+          </div>
+        </div>
+        <div class="card-foot"><a href="mailto:jayhughes@hughesstrategic.net">Request a Quote →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="popcorn-machine-2.png" alt="Tower Popcorn Vending Machine"></div>
+        <div class="card-body">
+          <span class="tag purple">Space Saver</span>
+          <h3>Tower Popcorn Machine</h3>
+          <p>A slim tower-style popcorn machine that pops on demand. Touchscreen ordering with coin, cash, card, and tap-to-pay in an eye-catching, custom-wrappable cabinet that fits narrow, high-traffic spots.</p>
+          <div class="specs">
+            <span class="spec">Touchscreen</span>
+            <span class="spec">Coin/Cash/Card/NFC</span>
+            <span class="spec">Slim Footprint</span>
+            <span class="spec">Custom Wrap</span>
+            <span class="spec">24/7</span>
+          </div>
+        </div>
+        <div class="card-foot"><a href="mailto:jayhughes@hughesstrategic.net">Request a Quote →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="popcorn-supplies.png" alt="Popcorn Cups and Corn Kernels Supplies"></div>
+        <div class="card-body">
+          <span class="tag">Keep It Stocked</span>
+          <h3>Cups &amp; Corn Supplies</h3>
+          <p>Keep every machine running with branded 32&nbsp;oz popcorn cups and premium flavored corn kernels. Cups ship 500 per carton; kernels come pre-portioned and ready to load. Ongoing resupply available.</p>
+          <div class="specs">
+            <span class="spec">32 oz Cups</span>
+            <span class="spec">500 / Carton</span>
+            <span class="spec">Flavored Kernels</span>
+            <span class="spec">Bulk Resupply</span>
+          </div>
+        </div>
+        <div class="card-foot"><a href="mailto:jayhughes@hughesstrategic.net">Request Supplies →</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="markets" class="markets">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker" style="color:#fff;">Where It Shines</div>
+      <h2>Built for Fun-First Locations</h2>
+    </div>
+    <div class="grid">
+      <div class="market"><div class="emo">🎡</div><h3>Family Entertainment</h3><p>FECs, trampoline parks &amp; play centers.</p></div>
+      <div class="market"><div class="emo">🛍️</div><h3>Malls &amp; Arcades</h3><p>High-traffic concourses and game zones.</p></div>
+      <div class="market"><div class="emo">🎉</div><h3>Parties &amp; Events</h3><p>Birthdays, festivals &amp; pop-up activations.</p></div>
+      <div class="market"><div class="emo">🍿</div><h3>Cinemas &amp; Venues</h3><p>Theaters, stadiums &amp; attractions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Bring the Fun to Your Location</h2>
+    <p>Tell us about your space and we'll recommend the right machine and custom wrap. Free consultation and quote.</p>
+    <a class="btn" href="mailto:jayhughes@hughesstrategic.net">Get a Quote →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand" style="color:#fff;margin-bottom:12px;"><span class="logo">🎪</span> HSG Entertainment</div>
+      <p>Automatic popcorn &amp; cotton candy vending for events, parties, and fun-first venues. A division of Hughes Strategic Group, Houston TX.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="#machines">Machines</a>
+      <a href="#markets">Where It Shines</a>
+      <a href="https://jhughes281.github.io/HSG-Lockers/">Commercial &amp; Lockers ↗</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:jayhughes@hughesstrategic.net">jayhughes@hughesstrategic.net</a>
+      <a href="tel:8327242007">832 724 2007</a>
+      <p>3050 Post Oak Blvd, Suite 510-U60<br>Houston, TX 77056</p>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2026 Hughes Strategic Group · HSG Entertainment · Houston, TX</div>
+</footer>
+
+</body>
+</html>
